@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MainMenuUI : MonoBehaviour
 {
-    [SerializeField] private int levelToLoad;
+    [SerializeField] private string levelToLoad;
     [SerializeField] private GameObject settingsCanvas;
 
 
