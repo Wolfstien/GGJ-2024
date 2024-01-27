@@ -27,4 +27,16 @@ public class InGameUI : MonoBehaviour
     {
         InputManager.instance.OnButtonTap(_id);
     }
+
+    public void Joystick1Input(Vector2 _distance)
+    {
+        Vector2 _direction = _distance.normalized;
+        InputManager.instance.OnJoystick1(_direction);
+    }
+
+    public void Joystick2Input(Vector2 _distance)
+    {
+        Vector2 _direction = _distance.normalized;
+        InputManager.instance.OnJoystick2(_direction);
+    }
 }
