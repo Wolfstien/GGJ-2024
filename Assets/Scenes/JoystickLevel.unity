@@ -272,8 +272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player1: {fileID: 1613394704}
   Player2: {fileID: 1799087443}
-  RotationSlerp: 0.1
-  MoveForceMultiplier: 20
+  RotationSlerp: 0.15
+  MoveForceMultiplier: 25
 --- !u!4 &438493123
 Transform:
   m_ObjectHideFlags: 0
@@ -866,6 +866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ae8b4a8e0b7fe40a57ab26909caf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ReboundForceMultiplier: 15
 --- !u!1 &1637415538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ae8b4a8e0b7fe40a57ab26909caf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ReboundForceMultiplier: 15
 --- !u!1001 &1998591102
 PrefabInstance:
   m_ObjectHideFlags: 0
