@@ -56,4 +56,20 @@ public class SettingsUI : MonoBehaviour
     {
         creditsUI.SetActive(true);
     }
+
+    public void OnClickS1()
+    {
+        SoundManager.instance.PlaySFX("Pop01");
+    }
+
+    public void OnClickS2()
+    {
+        SoundManager.instance.PlaySFX("Pop02");
+    }
+
+    public void OnClickS3()
+    {
+        SoundManager.instance.PlaySFX("Pop03");
+    }
+
 }

@@ -6,10 +6,9 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private string levelToLoad;
     [SerializeField] private GameObject settingsCanvas;
 
-
     void Start()
     {
-        
+        SoundManager.instance.PlayMusic("MainMenuTheme");
     }
 
     public void OnPlay()
@@ -26,4 +25,6 @@ public class MainMenuUI : MonoBehaviour
     {
         Application.Quit();
     }
+
+    
 }
