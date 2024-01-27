@@ -691,12 +691,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 2
   m_Drag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1367391542
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,12 +922,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 2
   m_Drag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &2124332159
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player1: {fileID: 1656296448}
   Player2: {fileID: 1214729491}
-  MoveAmountMultiplier: 0.25
+  MoveAmountMultiplier: 3
 --- !u!4 &2124332161
 Transform:
   m_ObjectHideFlags: 0
@@ -1053,6 +1053,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8001428849823153094, guid: ea3becfc526408b46924856931d69295,
+        type: 3}
+      propertyPath: m_Colors.m_FadeDuration
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8001428850197416746, guid: ea3becfc526408b46924856931d69295,
         type: 3}
       propertyPath: m_Name
@@ -1161,6 +1166,11 @@ PrefabInstance:
     - target: {fileID: 8001428850197416750, guid: ea3becfc526408b46924856931d69295,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001428850860228708, guid: ea3becfc526408b46924856931d69295,
+        type: 3}
+      propertyPath: m_Colors.m_FadeDuration
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

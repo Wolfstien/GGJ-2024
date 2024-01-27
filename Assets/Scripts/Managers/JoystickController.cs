@@ -24,11 +24,13 @@ public class JoystickController : MonoBehaviour
         if (Player1Direction3D.magnitude > 0.1f)
         {
             Player1.AddForce(Player1Direction3D * MoveForceMultiplier, ForceMode.Force);
+            // Player1.AddForce(Player1Direction3D * MoveForceMultiplier/5, ForceMode.VelocityChange);
             Player1.rotation = Quaternion.Slerp(Player1.rotation, Quaternion.LookRotation(Player1.velocity, Vector3.up), RotationSlerp);
         }
         if (Player2Direction3D.magnitude > 0.1f)
         {
             Player2.AddForce(Player2Direction3D * MoveForceMultiplier, ForceMode.Force);
+            // Player2.AddForce(Player2Direction3D * MoveForceMultiplier/5, ForceMode.VelocityChange);
             Player2.rotation = Quaternion.Slerp(Player2.rotation, Quaternion.LookRotation(Player2.velocity, Vector3.up), RotationSlerp);
         }
     }

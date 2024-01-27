@@ -14,6 +14,10 @@ public class BabyRebound : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
+            if (GetComponent<Rigidbody>().velocity.magnitude < other.rigidbody.velocity.magnitude)
+            {
+                return;
+            }
             other.rigidbody.AddForce((other.transform.position - transform.position).normalized * ReboundForceMultiplier, ForceMode.Impulse);
         }
     }
