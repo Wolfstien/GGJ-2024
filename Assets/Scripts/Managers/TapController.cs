@@ -16,7 +16,8 @@ public class TapController : MonoBehaviour
     {
         Debug.Log(_id);
         Rigidbody player = _id == 1 ? Player1 : Player2;
-        player.MovePosition(player.transform.position + (player.transform.forward * MoveAmountMultiplier));
+        // player.MovePosition(player.transform.position + (player.transform.forward * MoveAmountMultiplier));
+        player.AddForce(player.transform.forward * MoveAmountMultiplier, ForceMode.VelocityChange);
     }
 
     void OnEnable() 
