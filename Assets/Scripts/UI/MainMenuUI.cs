@@ -4,7 +4,10 @@ using UnityEngine;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private string levelToLoad;
+    [SerializeField] private string tapLevelName;
+    [SerializeField] private string joyStickLevelName;
     [SerializeField] private GameObject settingsCanvas;
+    [SerializeField] private GameObject gameModeSelectionUI;
 
     void Start()
     {
@@ -13,7 +16,8 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnPlay()
     {
-        SceneManager.LoadScene(levelToLoad);
+        //SceneManager.LoadScene(levelToLoad);
+        gameModeSelectionUI.SetActive(true);
     }
 
     public void OnSettings()
@@ -26,5 +30,18 @@ public class MainMenuUI : MonoBehaviour
         Application.Quit();
     }
 
-    
+    public void OnBack()
+    {
+        gameModeSelectionUI.SetActive(false);
+    }
+
+    public void OnTapMode()
+    {
+        SceneManager.LoadScene(tapLevelName);
+    }
+
+    public void OnJoyStickMode()
+    {
+        SceneManager.LoadScene(joyStickLevelName);
+    }
 }
