@@ -16,8 +16,8 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnPlay()
     {
-        //SceneManager.LoadScene(levelToLoad);
-        gameModeSelectionUI.SetActive(true);
+        SceneManager.LoadScene(levelToLoad);
+        //gameModeSelectionUI.SetActive(true);
     }
 
     public void OnSettings()
