@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TapController : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class TapController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         SoundManager.instance.PlayMusic("BattleTheme");
     }
 
@@ -68,6 +70,7 @@ public class TapController : MonoBehaviour
 
         if (_player.gameObject == Player1.gameObject)
         {
+            GameManager.instance.Player2Score++;
             DisablePhysics();
             BabyAnimator1.SetLose();
             BabyAnimator2.SetWon();
@@ -75,6 +78,7 @@ public class TapController : MonoBehaviour
         
         if (_player.gameObject == Player2.gameObject)
         {
+            GameManager.instance.Player1Score++;
             DisablePhysics();
             BabyAnimator2.SetLose();
             BabyAnimator1.SetWon();
@@ -90,8 +94,14 @@ public class TapController : MonoBehaviour
         }
     }
 
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     IEnumerator PlayEndSFX()
     {
+        InGameUI.instance.UpdateBottles();
         SoundManager.instance.PlaySFX("BabyScream");
         yield return new WaitForSeconds(1f);
         SoundManager.instance.PlaySFX("FallThud");
@@ -101,6 +111,17 @@ public class TapController : MonoBehaviour
         SoundManager.instance.PlaySFX("VictoryLaugh");
         yield return new WaitForSeconds(2f);
 
+        if (GameManager.instance.Player1Score>=3 || GameManager.instance.Player2Score>=3)
+        {
+            InGameUI.instance.ShowWinner();
+            Invoke("LoadMenu", 4f);
+        }
+        else
+        {
+            SceneManager.LoadScene("TapLevel");
+        }
+
+        yield return new WaitForSeconds(5f);
     }
 
     void OnEnable() 

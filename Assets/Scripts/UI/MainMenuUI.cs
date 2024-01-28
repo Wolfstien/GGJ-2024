@@ -16,6 +16,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnPlay()
     {
+        GameManager.instance.ResetTapLevelData();
         SceneManager.LoadScene(levelToLoad);
         //gameModeSelectionUI.SetActive(true);
     }
