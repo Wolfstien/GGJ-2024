@@ -329,5 +329,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 46bdedaeb39df75469e8fec3861d169a, type: 3}
   - name: VictoryLaugh
     clip: {fileID: 8300000, guid: 56572431a462662449995cacb99428b0, type: 3}
+  - name: FallThud
+    clip: {fileID: 8300000, guid: 2d0d59f3b6fdada4d8522dc5a2a21d37, type: 3}
   musicSource: {fileID: 3432262043955089427}
   sfxSource: {fileID: 3432262042716325567}

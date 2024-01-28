@@ -5,6 +5,9 @@ using UnityEngine;
 public class BabyRebound : MonoBehaviour
 {
     public float ReboundForceMultiplier = 10f;
+    public string[] HitSounds;
+    public TapController TapController;
+
     void Start()
     {
         
@@ -18,6 +21,9 @@ public class BabyRebound : MonoBehaviour
             {
                 return;
             }
+            
+            TapController.PlayHitSFX(HitSounds[Random.Range(0, HitSounds.Length)]);
+            // SoundManager.instance.PlaySFX(HitSounds[Random.Range(0, HitSounds.Length)]);
             other.rigidbody.AddForce((other.transform.position - transform.position).normalized * ReboundForceMultiplier, ForceMode.Impulse);
         }
     }

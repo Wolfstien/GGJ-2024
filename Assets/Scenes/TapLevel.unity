@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BabyFinal2
       objectReference: {fileID: 0}
+    - target: {fileID: 1760807417164226659, guid: adf3820502aadeb49b282a37b5380670,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c7410b519302ff4b82252f589c3060c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adf3820502aadeb49b282a37b5380670, type: 3}
 --- !u!1 &60951760 stripped
@@ -434,6 +439,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BabyFinal1
       objectReference: {fileID: 0}
+    - target: {fileID: 1760807417164226659, guid: adf3820502aadeb49b282a37b5380670,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0adf57b21aaf23345982b23ca09ab267, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adf3820502aadeb49b282a37b5380670, type: 3}
 --- !u!4 &218636385 stripped
@@ -1092,7 +1102,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1278,7 +1288,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.46
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
@@ -1534,6 +1544,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReboundForceMultiplier: 4
+  HitSounds:
+  - BabyHit01
+  - BabyHit02
+  - BabyHit03
+  TapController: {fileID: 2124332160}
 --- !u!1 &1367391542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,6 +1866,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReboundForceMultiplier: 4
+  HitSounds:
+  - BabyHit01
+  - BabyHit02
+  - BabyHit03
+  TapController: {fileID: 2124332160}
 --- !u!1 &1965949412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,15 +1933,84 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965949412}
-  m_LocalRotation: {x: 0.309017, y: -0, z: -0, w: 0.95105654}
-  m_LocalPosition: {x: 0, y: 5, z: -8}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 0, y: 6, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1139086440}
   m_Father: {fileID: 2124332161}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 36, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+--- !u!1001 &2024575868
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3432262044233183912, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432262044233183912, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432262044233183912, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432262044233183912, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432262044233183912, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432262044233183912, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432262044233183912, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432262044233183912, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432262044233183912, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432262044233183912, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432262044233183912, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432262044233183919, guid: 82aadbc359dbbd443910382606ad4c01,
+        type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82aadbc359dbbd443910382606ad4c01, type: 3}
 --- !u!1001 &2048281705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2147,11 +2236,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8001428849823153094, guid: ea3becfc526408b46924856931d69295,
-        type: 3}
-      propertyPath: m_Colors.m_FadeDuration
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8001428850197416746, guid: ea3becfc526408b46924856931d69295,
         type: 3}
       propertyPath: m_Name
@@ -2260,11 +2344,6 @@ PrefabInstance:
     - target: {fileID: 8001428850197416750, guid: ea3becfc526408b46924856931d69295,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8001428850860228708, guid: ea3becfc526408b46924856931d69295,
-        type: 3}
-      propertyPath: m_Colors.m_FadeDuration
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

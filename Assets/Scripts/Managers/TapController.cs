@@ -12,9 +12,11 @@ public class TapController : MonoBehaviour
 
     public GameObject CamStart, CamCombat;
 
+    int hitCooldownTime = -1;
+
     void Start()
     {
-        
+        SoundManager.instance.PlayMusic("BattleTheme");
     }
 
     void Begin()
@@ -25,6 +27,11 @@ public class TapController : MonoBehaviour
             CamCombat.SetActive(true);
             isStarted = true;
         }
+    }
+
+    void FixedUpdate() 
+    {
+        hitCooldownTime--;
     }
 
     public void Tap(int _id)
@@ -47,6 +54,7 @@ public class TapController : MonoBehaviour
     public void DisablePhysics()
     {
         isGameOver = true;
+        StartCoroutine(PlayEndSFX());
         Player1.isKinematic = true;
         Player2.isKinematic = true;
     }
@@ -71,6 +79,28 @@ public class TapController : MonoBehaviour
             BabyAnimator2.SetLose();
             BabyAnimator1.SetWon();
         }
+    }
+
+    public void PlayHitSFX(string _value)
+    {
+        if (hitCooldownTime < 0)
+        {
+            hitCooldownTime = 2;
+            SoundManager.instance.PlaySFX(_value);
+        }
+    }
+
+    IEnumerator PlayEndSFX()
+    {
+        SoundManager.instance.PlaySFX("BabyScream");
+        yield return new WaitForSeconds(1f);
+        SoundManager.instance.PlaySFX("FallThud");
+        yield return new WaitForSeconds(0.2f);
+        SoundManager.instance.PlaySFX("BellMatchEnd");
+        yield return new WaitForSeconds(0.7f);
+        SoundManager.instance.PlaySFX("VictoryLaugh");
+        yield return new WaitForSeconds(2f);
+
     }
 
     void OnEnable() 

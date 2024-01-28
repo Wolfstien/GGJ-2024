@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager instance;
     public static Action<InputAction.CallbackContext> InputTap;
-    public static Action<int> ButtonTap;
+    public static Action<int> ButtonTap, Pause;
     public static Action<Vector2> Joystick1, Joystick2;
 
     public PlayerInput playerInput;
@@ -20,6 +20,14 @@ public class InputManager : MonoBehaviour
         else
         {
             instance = this;
+        }
+    }
+
+    public void OnPauseToggle(InputAction.CallbackContext value)
+    {
+        if (Pause != null && value.performed)
+        {
+            Pause(0);
         }
     }
 

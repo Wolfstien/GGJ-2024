@@ -17,6 +17,7 @@ public class PauseMenuUI : MonoBehaviour
     public void OnResume()
     {
         this.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void OnSettings()
