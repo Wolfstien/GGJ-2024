@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class ArenaBounds : MonoBehaviour
 {
+    public UnityEvent<Rigidbody> OnPlayerRBExited;
+
     void Start()
     {
         
@@ -15,7 +18,7 @@ public class ArenaBounds : MonoBehaviour
         Debug.Log(other.tag);
         if (other.tag.Equals("Player"))
         {
-            SceneManager.LoadScene("MenuTemp");
+            OnPlayerRBExited.Invoke(other.attachedRigidbody);
         }
         // if (true)
         // {
